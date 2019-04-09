@@ -13,9 +13,9 @@ function createCacheBustedRequest(url) {
   let request = new Request( url , {cache: 'reload'});
 
   if('cache' in request) {
-
       return request;
   }
+
   let bustedUrl = new URL( url , self.location.href);
   bustedUrl.search += (bustedUrl.search ? '&' : '') + 'cachebust=' + Date.now();
   return new Request(bustedUrl);
@@ -26,7 +26,7 @@ function createCacheBustedRequest(url) {
 this.addEventListener('install', event => {
   event.waitUntil(
     caches.open(currentCache.offline).then(function(cache) {
-      return cache.addAll([offlineUrl]);
+      return cache.addAll(recursos);
     })
   );
 });
