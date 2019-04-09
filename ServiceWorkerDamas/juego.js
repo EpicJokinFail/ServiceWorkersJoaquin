@@ -154,7 +154,7 @@ function Casilla(row, column, color) {
 }
 
 function isThereAPieceBetween(casilla1, casilla2) {
-	alert("Sin hacer...");
+	
 }
 
 function clickOnEmptyCell(cell) {
