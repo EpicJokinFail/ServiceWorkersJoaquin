@@ -217,8 +217,6 @@ function clickOnPiece(indicePieza){
 
 function iniciarJuego(canvasElement, moveCountElement) {
 
-	register_service_worker();
-
     gCanvasElement = canvasElement;
     gCanvasElement.width = kPixelWidth;
     gCanvasElement.height = kPixelHeight;
@@ -228,18 +226,4 @@ function iniciarJuego(canvasElement, moveCountElement) {
     newGame();
 }
 
-function register_service_worker( ){
-
-	// Register the service worker
-	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
-	    // Registration was successful
-	    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-	}).catch(function(err) {
-	    // registration failed :(
-	    	console.log('ServiceWorker registration failed: ', err);
-	    }); 
-	}
-
-}
 
